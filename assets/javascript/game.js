@@ -16,7 +16,7 @@ var losses = 0;
 
 //generate and return random number for the game number
 function gameNumberGenerator() {
-    var randomNumberBetween0and120 = Math.floor(Math.random() * 121); 
+    var randomNumberBetween0and120 = Math.floor(Math.random() * ((120-19)+1) + 19);
     return randomNumberBetween0and120;
 };
 
@@ -31,12 +31,13 @@ function crystalNumberGenerator() {
 $( ".gameNumberBtn" ).click(function() {
     gameNumber = gameNumberGenerator();
     $( ".gameNumber" ).html("Match this number " + gameNumber);
-    $(".crystalSum").html("Crystal Sum")
+    $(".crystalSum").html("Click the crystals to get a number")
 
     crystal_1 = crystalNumberGenerator();
     crystal_2 = crystalNumberGenerator();
     crystal_3 = crystalNumberGenerator();
     crystal_4 = crystalNumberGenerator();
+    $("button").prop("disabled", false);
 });
 
 
@@ -86,13 +87,7 @@ $( ".gameNumberBtn" ).click(function() {
       $(".losses").html("Losses: " + losses);
       gameNumber = 0;
       playerScore = 0;
-      crystal_1 = crystalNumberGenerator();
-      crystal_2 = crystalNumberGenerator();
-      crystal_3 = crystalNumberGenerator();
-      crystal_4 = crystalNumberGenerator();
-        $("#crystal").on("click", function(){
-
-        });
+      $("button").prop("disabled", true);
 
   } else if ( playerScore > 0 && playerScore === gameNumber ) {
           wins ++;
@@ -103,14 +98,7 @@ $( ".gameNumberBtn" ).click(function() {
           $(".losses").html("Losses: " + losses);
           gameNumber = 0;
           playerScore = 0;
-          crystal_1 = crystalNumberGenerator();
-            crystal_2 = crystalNumberGenerator();
-            crystal_3 = crystalNumberGenerator();
-            crystal_4 = crystalNumberGenerator();
-
-            $("#crystal").on("click", function(){
-                
-            });
+          $("button").prop("disabled", true);
       };
     }
 
