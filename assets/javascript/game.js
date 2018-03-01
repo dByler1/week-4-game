@@ -77,28 +77,26 @@ $( ".gameNumberBtn" ).click(function() {
   
   //score operation - if the player score is greater than the game number, increment losses
   
+  
+  //reset function 
+  function resetGame() {
+    $( ".gameNumber" ).html("Match this number: ");
+    $("button").prop("disabled", true);
+    gameNumber = 0;
+    playerScore = 0;
+    $(".wins").html("Wins: " + wins);
+          $(".losses").html("Losses: " + losses);
+  }
+  
   function scoreOperation() {
     if (playerScore > gameNumber) {
       losses ++;
       $(".crystalSum").html("You lose, play again")
-      $( ".gameNumber" ).html("Match this number: ");
-  
-      $(".wins").html("Wins: " + wins);
-      $(".losses").html("Losses: " + losses);
-      gameNumber = 0;
-      playerScore = 0;
-      $("button").prop("disabled", true);
-
+      resetGame();
   } else if ( playerScore > 0 && playerScore === gameNumber ) {
           wins ++;
-          $(".crystalSum").html("You win, play again")
-          $( ".gameNumber" ).html("Match this number: ");
-  
-          $(".wins").html("Wins: " + wins);
-          $(".losses").html("Losses: " + losses);
-          gameNumber = 0;
-          playerScore = 0;
-          $("button").prop("disabled", true);
+          $(".crystalSum").html("You win, play again") 
+          resetGame();
       };
     }
 
