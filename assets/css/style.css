@@ -1,4 +1,4 @@
-.crystal_1 {
+#crystal_1 {
     background: url("../images/pink.jpg");
     height: 75px;
     width: 100px;
@@ -6,7 +6,7 @@
     background-repeat: no-repeat;
 }
 
-.crystal_2 {
+#crystal_2 {
     background: url("../images/purple-crystal.jpg");
     height: 75px;
     width: 100px;
@@ -14,7 +14,7 @@
     background-repeat: no-repeat;
 }
 
-.crystal_3 {
+#crystal_3 {
     background: url("../images/quartz-crystal.jpg");
     height: 75px;
     width: 100px;
@@ -22,7 +22,7 @@
     background-repeat: no-repeat;
 }
 
-.crystal_4 {
+#crystal_4 {
     background: url("../images/white-crystal.jpg");
     height: 75px;
     width: 100px;

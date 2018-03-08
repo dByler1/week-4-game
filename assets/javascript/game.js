@@ -26,6 +26,12 @@ function crystalNumberGenerator() {
     return crystalNumber;
 };
 
+function updateNumbers(value) {
+    playerScore += value;
+    $(".crystalSum").html(playerScore);
+    scoreOperation();
+}
+
 //start the game
 //click the game button to get the random number
 $( ".gameNumberBtn" ).click(function() {
@@ -45,22 +51,24 @@ $( ".gameNumberBtn" ).click(function() {
   
   //on the first click get a random # from above, store it globablly, add it to the global playerScore 
   // print the global player score
-  $(".crystal_1").on("click", function() {
-        playerScore += crystal_1;
-        $(".crystalSum").html(playerScore);
-        scoreOperation();
+//   $(".crystal").on("click", function() {
+//       crystal_1 = this."#crystal_1"
+//   })
+  
+  
+  $("#crystal_1").on("click", function() {
+        updateNumbers(crystal_1);
     });
 
 //second crystal
-  $(".crystal_2").on("click", function() {
+  $("#crystal_2").on("click", function() {
         playerScore += crystal_2;
         $(".crystalSum").html(playerScore);
         scoreOperation();
-
     });
 
   //third crystal
-  $(".crystal_3").on("click", function() {
+  $("#crystal_3").on("click", function() {
         playerScore += crystal_3;
         $(".crystalSum").html(playerScore)
         scoreOperation();
@@ -68,7 +76,7 @@ $( ".gameNumberBtn" ).click(function() {
 
 
   //fourth crystal
-  $(".crystal_4").on("click", function(){
+  $("#crystal_4").on("click", function(){
         playerScore += crystal_4;
         $(".crystalSum").html(playerScore);
         scoreOperation();
@@ -99,6 +107,58 @@ $( ".gameNumberBtn" ).click(function() {
           resetGame();
       };
     }
+
+
+
+
+    var files = [
+        "pavans_first_birthday.mov",
+        "owens_asleep_at_the_computer.jpg",
+        "michael_fights_a_polar_bear.mp4",
+        "nate_road_rage.avi",
+        "ruby_skydiving.jpeg",
+        "ken_getting_his_black_belt.png",
+        "dan_winning_underground_street_race.mov",
+        "its_hard_to_come_up_with_file_names.gif",
+        "seriously_this_is_taking_too_long.mpg",
+        "i_wonder_how_many_of_these_i_should_have.png",
+        "probably_a_few_more.avi",
+        "nutmeg_is_clawing_my_sneakers_again.mp4",
+        "cat_i_will_destroy_you.gif",
+        "i_wish_we_had_a_dog.jpeg",
+        "stop_looking_at_me_like_that_nutmeg.mpeg",
+        "aww_i_cant_hate_you.png",
+        "omg_my_sneakers.avi",
+        "cat_you_are_the_worst.mp4"
+      ];
+
+
+    //   for (i = 0; i < files.length; i++) {
+    //       if(files.i.endsWith("jpg") ) {
+    //           console.log(true);
+    //       }
+    //   }
+    
+      files.forEach(function(element) {
+        if (element.endsWith("jpg")) {
+            console.log(element);
+        }
+      });
+
+//       ### Image File Extensions
+
+// * jpg
+// * gif
+// * jpeg
+// * png
+
+// ### Video File Extensions
+
+// * mov
+// * avi
+// * mpeg
+// * mp4
+// * mpg
 
     
   
